@@ -1,0 +1,42 @@
+/*
+ * Details Reset utility
+ * Resets browser styles for <summary>
+ * Taken from https://github.com/primer/css/blob/master/src/buttons/button.scss#L205-L213
+ */
+.details-reset > summary {
+  list-style: none;
+}
+
+.details-reset > summary:before,
+.details-reset > summary::-webkit-details-marker {
+  display: none;
+}
+
+/*
+ * Details Overlay utility
+ * Used to allow clicking "outside" of <details>
+ * triggering close
+ * Taken from https://github.com/primer/css/blob/master/src/utilities/details.scss#L4-L15
+ */
+.details-overlay[open] > summary::before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  cursor: default;
+  content: " ";
+  background: transparent;
+}
+
+/*
+ * Details menu component
+ * Togglable menu
+ * Inspired by https://github.com/muan/details-on-details
+ */
+.details-menu > [role="menu"] {
+  position: relative;
+  z-index: 2;
+}
