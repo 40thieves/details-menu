@@ -1,0 +1,72 @@
+:root {
+  --primary: hsl(113, 39%, 44%);
+  --navbar-bg: hsl(217, 23%, 15%);
+  --navbar-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  margin: 0;
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-color);
+  padding: 15px 10px;
+}
+
+.demo-header__logo {
+  width: 12%;
+  fill: var(--navbar-color);
+}
+
+/*
+ * Nav
+ */
+
+.nav__toggle-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  user-select: none;
+}
+
+.nav__toggle-icon {
+  border: 2px solid var(--primary);
+  padding: 1px 7px 2px;
+  border-radius: 4px;
+}
+
+.nav__popup {
+  width: 100%;
+  left: 0;
+  background-color: var(--navbar-bg);
+  padding: 7px;
+}
+
+/* Override positioning on top-level menu to make full width */
+.details-menu > .nav__popup--full[role="menu"] {
+  position: absolute;
+}
+
+.nav__popup [role="menuitem"] {
+  display: block;
+  padding: 6px 17px 7px;
+  color: var(--navbar-color);
+  text-decoration: none;
+  border-radius: 9999px;
+}
+
+.nav__popup [role="menuitem"]:hover,
+.nav__popup [role="menuitem"]:focus {
+  color: var(--primary);
+  background-color: var(--navbar-color);
+}
